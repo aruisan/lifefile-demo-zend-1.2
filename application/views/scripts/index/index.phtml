@@ -1,12 +1,13 @@
-<h1>Mis Álbumes</h1>
-<p><a href="<?php echo $this->baseUrl; ?>/index/add">Agregar nuevo álbum</a></p>
-<table>
-    <tr>
-        <th>Título</th>
-        <th>Artista</th>
-        <th>Acciones</th>
-    </tr>
-    <?php foreach ($this->albums as $album): ?>
+<?php echo $this->render('header.phtml'); ?>
+<h1><?php echo $this->escape($this->title); ?></h1>
+<p><a href="<?php echo $this->baseUrl; ?>/index/add" class="btn btn-primary">Add new album</a></p>
+<table class="table">
+<tr>
+    <th>Title</th>
+    <th>Artist</th>
+    <th>Options</th>
+</tr>
+<?php foreach($this->albums as $album): ?>
     <tr>
         <td><?php echo $this->escape($album->title); ?></td>
         <td><?php echo $this->escape($album->artist); ?></td>
@@ -15,5 +16,6 @@
             <a href="<?php echo $this->baseUrl; ?>/index/delete/id/<?php echo $album->id; ?>">Eliminar</a>
         </td>
     </tr>
-    <?php endforeach; ?>
+<?php endforeach; ?>
 </table>
+<?php echo $this->render('footer.phtml'); ?>

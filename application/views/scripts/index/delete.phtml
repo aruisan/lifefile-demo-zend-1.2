@@ -1,6 +1,8 @@
-<h1>Eliminar Álbum</h1>
+<?php echo $this->render('header.phtml'); ?>
+<h1 class="text-center">Eliminar Álbum</h1>
 <p>¿Estás seguro de que deseas eliminar '<?php echo $this->escape($this->album->title); ?>'?</p>
 <form method="post">
-    <input type="submit" name="del" value="Sí">
-    <a href="<?php echo $this->baseUrl; ?>/index">No</a>
+    <button type="submit" name="del" class="btn btn-warning">Sí</button>
+    <a href="<?php echo $this->baseUrl; ?>/index" class="btn btn-danger">No</a>
 </form>
+<?php echo $this->render('footer.phtml'); ?>

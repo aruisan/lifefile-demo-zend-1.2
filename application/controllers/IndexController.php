@@ -1,5 +1,7 @@
 <?php
 
+use application\models\Album;
+
 class IndexController extends Zend_Controller_Action {
     protected $albumModel;
 
